@@ -1,0 +1,43 @@
+
+public class teacher {
+private String name;
+public String getName() {
+	return name;
+}
+
+public void setName(String name) {
+	this.name = name;
+}
+
+public byte getAge() {
+	return age;
+}
+
+public void setAge(byte age) {
+	this.age = age;
+}
+
+public String gethQualification() {
+	return hQualification;
+}
+
+public void sethQualification(String hQualification) {
+	this.hQualification = hQualification;
+}
+
+private byte age;
+private String hQualification;
+
+teacher(String name, byte age, String hQString)
+{
+	sethQualification(hQString);
+	setAge(age);
+	setName(name);
+}
+
+void teach()
+{
+	System.out.println(this.name+" is teaching");
+	
+}
+}

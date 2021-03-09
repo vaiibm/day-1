@@ -1,0 +1,18 @@
+
+public class Student extends Human {
+private String name;
+private byte age;
+
+void study() {
+	System.out.println(this.name+" is studying");
+}
+public 
+
+Student(){
+}
+Student(String name){
+setName(name);	
+}
+
+
+}
