@@ -14,6 +14,6 @@ private static void witoutStringPool() {
 private static void withStringBuilder() {
 	StringBuilder s3 = new StringBuilder("IBM");
 	StringBuilder s4 = new StringBuilder("IBM");
-	System.out.println(s3==s4);
+	System.out.println(s3== s3);
 }
 }
