@@ -1,9 +1,9 @@
 
 public class Developer {
-	int developerID;
+	int id;
 
 	public Developer(int developerID) {
-		this.developerID = developerID;
+		this.id = developerID;
 	}
 
 	int setFixedStatus(Bug bug) {
@@ -20,13 +20,13 @@ public class Developer {
 
 	Bug getMyBug() {
 		Bug bug;
-		bug = Tester.bug[0];
+		bug = Project.bug[0];
 		if (bug == null) {
 			System.out.println("some error");
 			return null;
 
 		}
-		if (bug.developerID == developerID) {
+		if (bug.developerID == id) {
 			return bug;
 		}
 		return null;
