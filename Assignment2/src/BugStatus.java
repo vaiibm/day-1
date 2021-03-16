@@ -7,7 +7,7 @@ public class BugStatus {
 	}
 
 	BugStatus() {
-		this.status = status.NEW;
+		this.status = STATUS.NEW;
 	}
 
 	public STATUS getStatus() {
@@ -15,10 +15,13 @@ public class BugStatus {
 	}
 
 	public void setStatus(STATUS status) {
-		if (status == status.ASSIGNED) {
+		if (status == STATUS.ASSIGNED) {
 			System.out.println("assigned to developer. mailed respective pm and developer");
 			this.status = status;
+		} else if (status == STATUS.RETEST) {
+			this.status = status;
+			System.out.println("developer has fixed this and marked it for Retest");
 		}
-	}
 
+	}
 }
