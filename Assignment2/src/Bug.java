@@ -1,6 +1,19 @@
 import java.util.Date;
 
 public class Bug {
+
+	private int id;
+	private int developerID;
+	private int testerID;
+	private String name;
+	private String location;
+	private float buildVersion;
+	private Date submitOn;
+	private int productID;
+	private SEVERITY severity;
+
+	private BugStatus bugStatus = new BugStatus();
+
 	public Bug(float buildVersion, Date submitOn, int id, String name, int productID, SEVERITY severity) {
 		this.setBuildVersion(buildVersion);
 		this.setSubmitOn(submitOn);
@@ -89,17 +102,5 @@ public class Bug {
 	public void setBugStatus(BugStatus bugStatus) {
 		this.bugStatus = bugStatus;
 	}
-
-	private int id;
-	private int developerID;
-	private int testerID;
-	private String name;
-	private String location;
-	private float buildVersion;
-	private Date submitOn;
-	private int productID;
-	private SEVERITY severity;
-
-	private BugStatus bugStatus = new BugStatus();
 
 }
