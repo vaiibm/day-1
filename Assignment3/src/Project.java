@@ -22,11 +22,10 @@ public class Project {
 				System.out.println("No bug yet");
 				return;
 			}
-			System.out.println("My bug details are id= " + bug1.getId() + ", Bugname= " + bug1.getName()
-					+ ", product id= " + bug1.getProductID() + ", Severity is = " + bug1.getSeverity() + " Date = "
-					+ bug1.getSubmitOn());
-			developer.setBugStatus(bug1, STATUS.DEFERRED);
-			//developer.setBugStatus(bug1);
+			System.out.println("My bug details are id= " + bug1.id + ", Bugname= " + bug1.name + ", product id= "
+					+ bug1.productID + ", Severity is = " + bug1.severity + " Date = " + bug1.submitOn);
+			// developer.setFixedStatus(bug1, STATUS.DEFERRED);
+			developer.setFixedStatus(bug1);
 
 			System.out.println();
 			bug1 = tester.getRetestBug();

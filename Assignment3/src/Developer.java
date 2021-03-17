@@ -1,25 +1,17 @@
 
 public class Developer {
-	private int id;
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
+	int id;
 
 	public Developer(int developerID) {
 		this.id = developerID;
 	}
 
-	int setBugStatus(Bug bug) {
+	int setFixedStatus(Bug bug) {
 		if (bug == null) {
 			System.out.println("Some error");
 			return -1;
 		}
-		bug.getBugStatus().setStatus(STATUS.RETEST);
+		bug.bugStatus.setStatus(STATUS.RETEST);
 
 		return 1;
 
@@ -33,18 +25,18 @@ public class Developer {
 			return null;
 
 		}
-		if (bug.getDeveloperID() == getId() && bug.getBugStatus().status == STATUS.ASSIGNED) {
+		if (bug.developerID == id && bug.bugStatus.status == STATUS.ASSIGNED) {
 			return bug;
 		}
 		return null;
 	}
 
-	public int setBugStatus(Bug bug1, STATUS deferred) {
+	public int setFixedStatus(Bug bug1, STATUS deferred) {
 		if (bug1 == null) {
 			System.out.println("Some error");
 			return -1;
 		}
-		bug1.getBugStatus().setStatus(STATUS.DEFERRED);
+		bug1.bugStatus.setStatus(STATUS.DEFERRED);
 
 		return 1;
 	}
