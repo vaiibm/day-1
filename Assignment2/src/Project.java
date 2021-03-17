@@ -12,7 +12,7 @@ public class Project {
 		System.out.println("Developer build product and sent it to tester");
 
 		if (bugPresent) {
-			bug[0] = tester.createBugReport(1.1f, new Date("11/11/11"), 1, "first bug", 55, SEVERITY.LEVEL1);
+			bug[0] = tester.createBugReport(1.1f, new Date("03/11/2021"), 1, "first bug", 55, SEVERITY.LEVEL1);
 			tester.assignBug(bug[0], 11);
 
 			System.out.println("Now Developer");
@@ -23,8 +23,9 @@ public class Project {
 				return;
 			}
 			System.out.println("My bug details are id= " + bug1.id + ", Bugname= " + bug1.name + ", product id= "
-					+ bug1.productID + ", Severity is = " + bug1.severity);
-			developer.setFixedStatus(bug1);
+					+ bug1.productID + ", Severity is = " + bug1.severity + " Date = " + bug1.submitOn);
+			developer.setFixedStatus(bug1, STATUS.DEFERRED);
+			// developer.setFixedStatus(bug1);
 
 			;
 			bug1 = tester.getRetestBug();

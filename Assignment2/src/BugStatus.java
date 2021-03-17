@@ -24,6 +24,9 @@ public class BugStatus {
 		} else if (status == STATUS.CLOSED) {
 			this.status = status;
 			System.out.println("TESTER CLOSE THIS BUG");
+		} else if (status == STATUS.DEFERRED) {
+			this.status = status;
+			System.out.println("Developer Deferred bug");
 		}
 
 	}

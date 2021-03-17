@@ -7,7 +7,6 @@ public class Developer {
 	}
 
 	int setFixedStatus(Bug bug) {
-		System.out.println("I Fixed bug.");
 		if (bug == null) {
 			System.out.println("Some error");
 			return -1;
@@ -26,9 +25,19 @@ public class Developer {
 			return null;
 
 		}
-		if (bug.developerID == id) {
+		if (bug.developerID == id && bug.bugStatus.status == STATUS.ASSIGNED) {
 			return bug;
 		}
 		return null;
+	}
+
+	public int setFixedStatus(Bug bug1, STATUS deferred) {
+		if (bug1 == null) {
+			System.out.println("Some error");
+			return -1;
+		}
+		bug1.bugStatus.setStatus(STATUS.DEFERRED);
+
+		return 1;
 	}
 }
