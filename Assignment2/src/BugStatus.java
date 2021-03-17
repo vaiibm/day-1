@@ -21,6 +21,9 @@ public class BugStatus {
 		} else if (status == STATUS.RETEST) {
 			this.status = status;
 			System.out.println("developer has fixed this and marked it for Retest");
+		} else if (status == STATUS.CLOSED) {
+			this.status = status;
+			System.out.println("TESTER CLOSE THIS BUG");
 		}
 
 	}

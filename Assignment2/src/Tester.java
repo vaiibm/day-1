@@ -1,10 +1,10 @@
+import java.util.Date;
 
 public class Tester {
 
 	int id;
 
 	public Tester(int id) {
-		// TODO Auto-generated constructor stub
 		this.id = id;
 	}
 
@@ -14,10 +14,36 @@ public class Tester {
 		System.out.println("assined bug to developer with id= " + developerID);
 	}
 
-	public Bug createBugReport(String bugID, String bugName, String projectID, int priority) {
-		Bug bug = new Bug(bugID, bugName, projectID, 0);
-		System.out.println("Created bug report");
+	public Bug createBugReport(float buildVersion, Date submitOn, int id, String name, int productID,
+			SEVERITY severity) {
+		Bug bug = new Bug(buildVersion, submitOn, id, name, productID, severity);
+		bug.testerID = id;
+		System.out.println("Tester Created bug report");
 		return bug;
+	}
+
+	public Bug getRetestBug() {
+		Bug bug;
+		bug = Project.bug[0];
+		if (bug == null) {
+			System.out.println("some error");
+			return null;
+
+		}
+		if (bug.bugStatus.status == STATUS.RETEST) {
+			System.out.println("Retest bug details are id= " + bug.id + ", Bugname= " + bug.name + ", product id= "
+					+ bug.productID + ", Severity is = " + bug.severity);
+
+			return bug;
+		}
+		return null;
+	}
+
+	public Bug closeBug(Bug bug1) {
+		// TODO Auto-generated method stub
+		bug1.bugStatus.setStatus(STATUS.CLOSED);
+		return null;
+
 	}
 
 }
